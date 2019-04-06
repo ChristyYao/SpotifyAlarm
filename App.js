@@ -1,17 +1,27 @@
-import React from 'react';
-import { StyleSheet, Text, View } from 'react-native';
+import React from "react";
+import { Button, View, Text, StyleSheet } from "react-native";
+import { createStackNavigator, createAppContainer } from "react-navigation";
 import Splash from './src/components/Splash/Splash';
 import Login from './src/components/Login/Login';
+import Main from './src/components/Main/Main';
+
+const AppNavigator = createStackNavigator(
+  {
+    Login: Login,
+    Main: Main
+  },
+  {
+    initialRouteName: "Login"
+  }
+);
+
+const AppContainer = createAppContainer(AppNavigator);
 
 export default class App extends React.Component {
   render() {
-    return (
-      // <Splash/>
-      <Login/>
-    );
+    return <AppContainer />;
   }
 }
-
 
 const styles = StyleSheet.create({
   container: {
