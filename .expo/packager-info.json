@@ -1,9 +1,9 @@
 {
-  "devToolsPort": 19003,
-  "expoServerPort": 19004,
-  "packagerPort": null,
-  "packagerPid": null,
-  "expoServerNgrokUrl": null,
-  "packagerNgrokUrl": null,
-  "ngrokPid": null
+  "devToolsPort": 19002,
+  "expoServerPort": 19000,
+  "packagerPort": 19001,
+  "packagerPid": 15756,
+  "expoServerNgrokUrl": "https://a4-nsu.anonymous.spotifyalarm.exp.direct",
+  "packagerNgrokUrl": "https://packager.a4-nsu.anonymous.spotifyalarm.exp.direct",
+  "ngrokPid": 16292
 }
