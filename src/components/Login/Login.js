@@ -12,7 +12,7 @@ class Login extends React.Component {
         <View style={styles.formContainer}>
           <TouchableOpacity
           style={styles.buttonContainer}
-          onPress={onClick}>
+          onPress={() => this.props.navigation.navigate('Alarm')}>
             <Text style={styles.buttonText}>Login with Spotify</Text>
           </TouchableOpacity>
         </View>
@@ -24,7 +24,7 @@ class Login extends React.Component {
 //() => this.props.navigation.navigate('Add')
 
 onClick = () => {
-  this.props.navigation.navigate('Main')
+  this.props.navigation.navigate('Alarm')
 }
 
 export default Login;

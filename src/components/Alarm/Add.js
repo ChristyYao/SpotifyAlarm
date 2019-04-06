@@ -54,6 +54,7 @@ const styles = StyleSheet.create({
 });
 */
 
+
 //This is an example code to get DatePicker//
 // import React, { Component } from 'react';
 //import react in our code.
@@ -62,11 +63,16 @@ const styles = StyleSheet.create({
 import DatePicker from 'react-native-datepicker';
 //import DatePicker from the package we installed
 
-export default class Add extends Component {
+export default class MyDatePicker extends Component {
   constructor(props) {
     super(props);
-    //set value in state for initial date
-    this.state = { date: '15-05-2018' };
+    this.state = {chosenDate: new Date()};
+
+    this.setDate = this.setDate.bind(this);
+  }
+
+  setDate(newDate) {
+    this.setState({chosenDate: newDate});
   }
 
   render() {
@@ -74,12 +80,12 @@ export default class Add extends Component {
       <View style={styles.container}>
         <DatePicker
           style={{ width: 200 }}
-          date={this.state.date} //initial date from state
-          mode="date" //The enum of date, datetime and time
-          placeholder="select date"
-          format="DD-MM-YYYY"
-          minDate="01-01-2016"
-          maxDate="01-01-2019"
+          date={this.state.chosenDate} //initial date from state
+          mode="time" //The enum of date, datetime and time
+          placeholder={'00:00'}
+          format="HH:MM"
+          minDate="00:00"
+          maxDate="23:59"
           confirmBtnText="Confirm"
           cancelBtnText="Cancel"
           customStyles={{
@@ -93,9 +99,7 @@ export default class Add extends Component {
               marginLeft: 36,
             },
           }}
-          onDateChange={date => {
-            this.setState({ date: date });
-          }}
+          onDateChange={this.setDate}
         />
       </View>
     );

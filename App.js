@@ -3,7 +3,6 @@ import { Button, View, Text, StyleSheet } from "react-native";
 import { createStackNavigator, createAppContainer } from "react-navigation";
 import Splash from './src/components/Splash/Splash';
 import Login from './src/components/Login/Login';
-import Main from './src/components/Main/Main';
 import Alarm from './src/components/Alarm/Alarm';
 import Add from './src/components/Alarm/Add';
 
@@ -18,13 +17,6 @@ const AppNavigator = createStackNavigator(
     },
     Add: {
       screen: Add,
-      navigationOptions:
-      {
-        header: null,
-      }
-    },
-    Main: {
-      screen: Main,
       navigationOptions:
       {
         header: null,
