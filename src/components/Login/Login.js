@@ -6,11 +6,12 @@ import LoginForm from './LoginForm';
 
 class Login extends React.Component {
   render() {
+    // console.log('hi')
     return (
       <View style={styles.container}>
         <View style={styles.logoContainer}>
           <Image style={styles.logo} source={require('../../Images/alarmClock.png')} />
-          <Text style={styles.title}>Spotify Alarm App </Text>
+          <Text style={styles.title}>Spotify Alarm</Text>
         </View>
         <View style={styles.formContainer}>
           <LoginForm />
@@ -34,7 +35,7 @@ const styles = StyleSheet.create({
     fontSize: 30,
     fontWeight: 'bold',
     marginTop: 10,
-    width: 140,
+    width: 150,
     textAlign: 'center',
     opacity: 0.9
   },

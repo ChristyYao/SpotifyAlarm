@@ -4,15 +4,9 @@ import { createStackNavigator, createAppContainer } from "react-navigation";
 import Splash from './src/components/Splash/Splash';
 import Login from './src/components/Login/Login';
 import Main from './src/components/Main/Main';
+import Alarm from './src/components/Alarm/Alarm';
 
 const AppNavigator = createStackNavigator(
-  // {
-  //   Login: Login,
-  //   Main: Main,
-  // },
-  // {
-  //   initialRouteName: "Login"
-  // }
   {
     Login: {
       screen: Login,
@@ -26,11 +20,33 @@ const AppNavigator = createStackNavigator(
       navigationOptions:
       {
         header: null,
-        }
-      },
+      }
     },
+    Alarm: {
+      screen: Alarm,
+      navigationOptions:
+      {
+        headerStyle: {
+          backgroundColor: "transparent"
+        },
+        headerTitleStyle: {
+          fontWeight: "bold",
+          color: "#fff",
+          zIndex: 1,
+          fontSize: 18,
+          lineHeight: 23,
+          fontFamily: "CircularStd-Bold"
+        },
+        headerTintColor: "#fff",
+        animationEnabled: true
+      }
+    },
+  },
     {
-      initialRouteName: "Login"
+      initialRouteName: "Alarm",
+      navigationOptions: {
+
+      }
     }
 );
 
