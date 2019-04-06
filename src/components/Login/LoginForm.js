@@ -1,19 +1,24 @@
 import React, { Component } from 'react';
-import { StyleSheet, View, TextInput, TouchableOpacity, Text } from 'react-native';
+import { StyleSheet, View, TextInput, TouchableOpacity, Text, TouchableHighlight} from 'react-native';
 
 export default class LoginForm extends Component {
   render() {
     return (
       <View style={styles.container}>
-        <TouchableOpacity style={styles.buttonContainer}>
+        <TouchableOpacity
+        style={styles.buttonContainer}
+        onPress={onClick}>
           <Text style={styles.buttonText}>Login with Spotify</Text>
         </TouchableOpacity>
+        <Toast ref="toast"/>
       </View>
     );
   }
 }
 
-// export default LoginForm;
+onClick = () => {
+
+}
 
 const styles = StyleSheet.create({
   container: {
