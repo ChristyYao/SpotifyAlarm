@@ -6,13 +6,32 @@ import Login from './src/components/Login/Login';
 import Main from './src/components/Main/Main';
 
 const AppNavigator = createStackNavigator(
+  // {
+  //   Login: Login,
+  //   Main: Main,
+  // },
+  // {
+  //   initialRouteName: "Login"
+  // }
   {
-    Login: Login,
-    Main: Main
-  },
-  {
-    initialRouteName: "Login"
-  }
+    Login: {
+      screen: Login,
+      navigationOptions:
+      {
+        header: null,
+      }
+    },
+    Main: {
+      screen: Main,
+      navigationOptions:
+      {
+        header: null,
+        }
+      },
+    },
+    {
+      initialRouteName: "Login"
+    }
 );
 
 const AppContainer = createAppContainer(AppNavigator);
