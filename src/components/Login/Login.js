@@ -1,12 +1,9 @@
 import React from 'react';
 import { StyleSheet, Text, View, Image } from 'react-native';
-// import StyleSheet from '../../Styles/Styles';
-// import { createStackNavigator, createAppContainer } from "react-navigation";
 import LoginForm from './LoginForm';
 
 class Login extends React.Component {
   render() {
-    // console.log('hi')
     return (
       <View style={styles.container}>
         <View style={styles.logoContainer}>
@@ -35,7 +32,7 @@ const styles = StyleSheet.create({
     fontSize: 30,
     fontWeight: 'bold',
     marginTop: 10,
-    width: 150,
+    width: 200,
     textAlign: 'center',
     opacity: 0.9
   },
