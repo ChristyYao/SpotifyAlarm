@@ -5,6 +5,7 @@ import Splash from './src/components/Splash/Splash';
 import Login from './src/components/Login/Login';
 import Main from './src/components/Main/Main';
 import Alarm from './src/components/Alarm/Alarm';
+import Add from './src/components/Alarm/Add';
 
 const AppNavigator = createStackNavigator(
   {
@@ -41,12 +42,31 @@ const AppNavigator = createStackNavigator(
         animationEnabled: true
       }
     },
+    Add: {
+      screen: Add,
+      navigationOptions:
+      {
+        header: null,
+      }
+    },
   },
     {
-      initialRouteName: "Alarm",
-      navigationOptions: {
-
-      }
+      initialRouteName: "Add",
+      // defaultNavigationOptions: {
+      //   headerStyle: {
+      //     backgroundColor: "red"
+      //   },
+      //   headerTitleStyle: {
+      //     fontWeight: "bold",
+      //     color: "#fff",
+      //     zIndex: 1,
+      //     fontSize: 18,
+      //     lineHeight: 23,
+      //     fontFamily: "CircularStd-Bold"
+      //   },
+      //   headerTintColor: "#fff",
+      //   animationEnabled: true
+      // },
     }
 );
 

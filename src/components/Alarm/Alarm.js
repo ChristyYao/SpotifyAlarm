@@ -10,8 +10,8 @@ export default class Alarm extends Component {
       headerRight: (
         <Button
           onPress={navigation.getParam('increaseCount')}
-          title="+1"
-          color={Platform.OS === 'ios' ? '#251917' : null}
+          title="+"
+          color='#251917'
         />
       ),
     };
