@@ -1,11 +1,20 @@
 import React from 'react';
-import { StyleSheet, Text, View } from 'react-native';
+import { StyleSheet, Text, View, Image } from 'react-native';
+// import StyleSheet from '../../Styles/Styles';
+// import { createStackNavigator, createAppContainer } from "react-navigation";
+import LoginForm from './LoginForm';
 
 class Login extends React.Component {
   render() {
     return (
       <View style={styles.container}>
-        <Text> hihihihi this is login </Text>
+        <View style={styles.logoContainer}>
+          <Image style={styles.logo} source={require('../../Images/alarmClock.png')} />
+          <Text style={styles.title}>Spotify Alarm App </Text>
+        </View>
+        <View style={styles.formContainer}>
+          <LoginForm />
+        </View>
       </View>
     );
   }
@@ -18,12 +27,16 @@ const styles = StyleSheet.create({
     flex: 1,
     backgroundColor: '#F1DFD7',
     alignItems: 'center',
-    justifyContent: 'center',
+    justifyContent: 'center'
   },
   title: {
     color: '#251917',
-    fontSize: 35,
-    fontWeight: 'bold'
+    fontSize: 30,
+    fontWeight: 'bold',
+    marginTop: 10,
+    width: 140,
+    textAlign: 'center',
+    opacity: 0.9
   },
   subtitle: {
     color: '#A5866C',
@@ -33,5 +46,14 @@ const styles = StyleSheet.create({
   titleWrapper: {
     justifyContent: 'center',
     flex: 1
+  },
+  logoContainer: {
+    alignItems: 'center',
+    flexGrow: 1,
+    justifyContent: 'center'
+  },
+  logo: {
+    width: 100,
+    height: 100
   }
 });
