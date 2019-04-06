@@ -1,5 +1,5 @@
 import React from "react";
-import { Button, View, Text, StyleSheet } from "react-native";
+import { Button, View, Text, StyleSheet, AppRegistry } from "react-native";
 import { createStackNavigator, createAppContainer } from "react-navigation";
 import Splash from './src/components/Splash/Splash';
 import Login from './src/components/Login/Login';
@@ -51,7 +51,7 @@ const AppNavigator = createStackNavigator(
     },
   },
     {
-      initialRouteName: "Add",
+      initialRouteName: "Login",
       // defaultNavigationOptions: {
       //   headerStyle: {
       //     backgroundColor: "red"

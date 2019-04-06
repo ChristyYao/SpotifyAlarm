@@ -11,7 +11,7 @@ class Login extends React.Component {
           <Text style={styles.title}>Spotify Alarm</Text>
         </View>
         <View style={styles.formContainer}>
-          <LoginForm />
+          <LoginForm navigation={this.props.navigation}/>
         </View>
       </View>
     );
