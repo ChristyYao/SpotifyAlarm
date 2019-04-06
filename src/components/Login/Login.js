@@ -1,7 +1,5 @@
 import React from 'react';
 import { StyleSheet, Text, View, Image } from 'react-native';
-// import StyleSheet from '../../Styles/Styles';
-// import { createStackNavigator, createAppContainer } from "react-navigation";
 import LoginForm from './LoginForm';
 
 class Login extends React.Component {
@@ -10,7 +8,7 @@ class Login extends React.Component {
       <View style={styles.container}>
         <View style={styles.logoContainer}>
           <Image style={styles.logo} source={require('../../Images/alarmClock.png')} />
-          <Text style={styles.title}>SpotifyAlarm</Text>
+          <Text style={styles.title}>Spotify Alarm</Text>
         </View>
         <View style={styles.formContainer}>
           <LoginForm />
