@@ -1,6 +1,5 @@
 import React from 'react';
-import { StyleSheet, Text, View, Image } from 'react-native';
-import LoginForm from './LoginForm';
+import { StyleSheet, Text, View, Image, Button, TouchableOpacity } from 'react-native';
 
 class Login extends React.Component {
   render() {
@@ -11,16 +10,31 @@ class Login extends React.Component {
           <Text style={styles.title}>Spotify Alarm</Text>
         </View>
         <View style={styles.formContainer}>
-          <LoginForm navigation={this.props.navigation}/>
+          <TouchableOpacity
+          style={styles.buttonContainer}
+          onPress={onClick}>
+            <Text style={styles.buttonText}>Login with Spotify</Text>
+          </TouchableOpacity>
         </View>
       </View>
     );
   }
 }
 
+//() => this.props.navigation.navigate('Add')
+
+onClick = () => {
+  this.props.navigation.navigate('Main')
+}
+
 export default Login;
 
 const styles = StyleSheet.create({
+  buttonText: {
+    textAlign: 'center',
+    color: '#251917',
+    fontSize: 20
+  },
   container: {
     flex: 1,
     backgroundColor: '#F1DFD7',
@@ -53,5 +67,17 @@ const styles = StyleSheet.create({
   logo: {
     width: 100,
     height: 100
-  }
+  },
+  buttonContainer: {
+    marginTop:10,
+    paddingTop:25,
+    paddingBottom:25,
+    paddingHorizontal: 25,
+    marginLeft:30,
+    marginRight:30,
+    marginBottom: 100,
+    borderRadius:20,
+    borderWidth: 1.5,
+    borderColor: '#251917'
+  },
 });

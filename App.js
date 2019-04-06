@@ -1,5 +1,5 @@
 import React from "react";
-import { Button, View, Text, StyleSheet, AppRegistry } from "react-native";
+import { Button, View, Text, StyleSheet } from "react-native";
 import { createStackNavigator, createAppContainer } from "react-navigation";
 import Splash from './src/components/Splash/Splash';
 import Login from './src/components/Login/Login';
@@ -11,6 +11,13 @@ const AppNavigator = createStackNavigator(
   {
     Login: {
       screen: Login,
+      navigationOptions:
+      {
+        header: null,
+      }
+    },
+    Add: {
+      screen: Add,
       navigationOptions:
       {
         header: null,
@@ -42,31 +49,12 @@ const AppNavigator = createStackNavigator(
         animationEnabled: true
       }
     },
-    Add: {
-      screen: Add,
-      navigationOptions:
-      {
-        header: null,
-      }
-    },
   },
     {
       initialRouteName: "Login",
-      // defaultNavigationOptions: {
-      //   headerStyle: {
-      //     backgroundColor: "red"
-      //   },
-      //   headerTitleStyle: {
-      //     fontWeight: "bold",
-      //     color: "#fff",
-      //     zIndex: 1,
-      //     fontSize: 18,
-      //     lineHeight: 23,
-      //     fontFamily: "CircularStd-Bold"
-      //   },
-      //   headerTintColor: "#fff",
-      //   animationEnabled: true
-      // },
+      navigationOptions: {
+
+      }
     }
 );
 
