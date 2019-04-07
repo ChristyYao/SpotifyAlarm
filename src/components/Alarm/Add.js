@@ -21,7 +21,6 @@ import { createStackNavigator, createAppContainer } from 'react-navigation';
 //   }
 // }
 
-/*
 export default class Add extends Component {
   constructor(props) {
     super(props);
@@ -50,68 +49,6 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
     justifyContent: 'center',
-  },
-});
-*/
-
-
-//This is an example code to get DatePicker//
-// import React, { Component } from 'react';
-//import react in our code.
-// import { View, StyleSheet } from 'react-native';
-//import all the components we are going to use.
-import DatePicker from 'react-native-datepicker';
-//import DatePicker from the package we installed
-
-export default class MyDatePicker extends Component {
-  constructor(props) {
-    super(props);
-    this.state = {chosenDate: new Date()};
-
-    this.setDate = this.setDate.bind(this);
-  }
-
-  setDate(newDate) {
-    this.setState({chosenDate: newDate});
-  }
-
-  render() {
-    return (
-      <View style={styles.container}>
-        <DatePicker
-          style={{ width: 200 }}
-          date={this.state.chosenDate} //initial date from state
-          mode="time" //The enum of date, datetime and time
-          placeholder={'00:00'}
-          format="HH:MM"
-          minDate="00:00"
-          maxDate="23:59"
-          confirmBtnText="Confirm"
-          cancelBtnText="Cancel"
-          customStyles={{
-            dateIcon: {
-              position: 'absolute',
-              left: 0,
-              top: 4,
-              marginLeft: 0,
-            },
-            dateInput: {
-              marginLeft: 36,
-            },
-          }}
-          onDateChange={this.setDate}
-        />
-      </View>
-    );
-  }
-}
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    alignItems: 'center',
-    justifyContent: 'center',
-    marginTop: 50,
-    padding: 16,
   },
 });
 
