@@ -5,8 +5,8 @@ export default class App extends React.Component {
   constructor(props) {
     super(props);
     this.apiPrefix = 'https://api.spotify.com/v1';
-    this.secret = 'BQBkWHLlewjUIuZAnI6cwOmyITIiXalOog3hegMXGtkFJkWRjCOABsR4L6yIybgqEsQFAfKLcWwI0IlnKyFDRKRwwLQNvxIRSD3J--pGsyrQRLLdmS2aYT5YGcVIUl7QTFUW1YfTX8JwztdfpLEHLBZXgho'
-        ;
+    this.secret = 'BQCCs7OQ1pIqersls7fhXt1nrLNsbEUyfQhq_TEuw-8mct_vB2p1u7Yomya6Kmq1bJGkQd6tv19c-s_lg32owxIRILN9NRhtXiNHFscS0KoTF78sqnQWvGCt4diXXf9FWKhKBqNA0cFmfqORBMOPHVsiss4'
+            ;
     this.deviceID = 'N/A';
     this.deviceName = 'N/A';
     this.deviceType = 'N/A';
