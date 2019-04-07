@@ -1,45 +1,15 @@
 import React, { Component } from 'react';
 import { StyleSheet, View, TextInput, TouchableOpacity, Text, Platform, Button, DatePickerIOS } from 'react-native';
 import Time from './Time';
+import Spotify from './Spotify';
 import { createStackNavigator, createAppContainer } from 'react-navigation';
 
-// export default class Alarm extends Component {
-//   static navigationOptions = ({ navigation }) => {
-//     return {
-//       headerTitle: <Text>Add Alarm</Text>,
-//       ),
-//     };
-//   };
-//
-//   render() {
-//     return (
-//       <View style={{ flex: 1, alignItems: 'center', justifyContent: 'center' }}>
-//         <Text>Alarm Screen</Text>
-//         <Text>Count: {this.state.count}</Text>
-//       </View>
-//     );
-//   }
-// }
-
 export default class Add extends Component {
-  constructor(props) {
-    super(props);
-    this.state = {chosenDate: new Date()};
-
-    this.setDate = this.setDate.bind(this);
-  }
-
-  setDate(newDate) {
-    this.setState({chosenDate: newDate});
-  }
-
   render() {
     return (
       <View style={styles.container}>
-        <DatePickerIOS
-          date={this.state.chosenDate}
-          onDateChange={this.setDate}
-        />
+
+        <Spotify />
       </View>
     );
   }
@@ -49,6 +19,8 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
     justifyContent: 'center',
+    backgroundColor: '#F1DFD7',
+    paddingTop: 20
   },
 });
 

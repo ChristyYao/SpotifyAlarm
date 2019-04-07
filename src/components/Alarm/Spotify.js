@@ -1,5 +1,5 @@
 import React from 'react';
-import { StyleSheet, Text, View, Image, Button, TextInput, Item, ScrollView } from 'react-native';
+import { StyleSheet, Text, View, Image, Button, TextInput, Item, ScrollView, DatePickerIOS } from 'react-native';
 
 export default class App extends React.Component {
   constructor(props) {
@@ -17,7 +17,14 @@ export default class App extends React.Component {
     this.songUri = 'N/A';
     this.tracks = 'N/A';
     this.limit = 20;
-    this.state = { text: '' };
+    this.state = { text: '' , chosenDate: new Date()};
+
+    this.stateDate = {chosenDate: new Date()};
+    this.setDate = this.setDate.bind(this);
+  }
+
+  setDate(newDate) {
+    this.setState({chosenDate: newDate});
   }
 
   pick_device(id, name, type)
@@ -240,7 +247,16 @@ export default class App extends React.Component {
    else {
      return (
        <View style={styles.container}>
+        <View style={styles.dateContainer}>
+         <DatePickerIOS
+           date={this.state.chosenDate}
+           onDateChange={this.setDate}
+         />
+         <Text>                                                                                       </Text>
+        </View>
          <Text>{this.deviceName} ({this.deviceType})</Text>
+         <Text> {console.log(this.state.chosenDate)} {console.log(Date.now())}
+                {console.log(this.state.chosenDate - Date.now())} </Text>
          <TextInput
          style={styles.textin}
          onChangeText={(text) => this.setState({text})}
@@ -275,7 +291,7 @@ const styles = StyleSheet.create({
    backgroundColor: '#F1DFD7',
    alignItems: 'center',
    justifyContent: 'center',
-   marginTop:10,
+   // marginTop:10,
    paddingTop:25
  },
  scrollContainer: {
@@ -287,6 +303,12 @@ const styles = StyleSheet.create({
  songContainer: {
    flex: 1,
    flexDirection: 'row'
+ },
+ dateContainer: {
+   flex: 1,
+   justifyContent: 'center',
+   backgroundColor: '#F1DFD7',
+   paddingTop: 20
  },
  title: {
    color: '#251917',
@@ -309,7 +331,7 @@ const styles = StyleSheet.create({
    paddingHorizontal: 25,
    marginLeft:30,
    marginRight:30,
-   marginBottom: 100,
+   marginBottom: 30,
    borderRadius:20,
    borderWidth: 1.5,
    borderColor: '#251917'

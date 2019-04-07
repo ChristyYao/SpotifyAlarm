@@ -1,45 +1,30 @@
 import React, { Component } from 'react';
-import { StyleSheet, View, TextInput, TouchableOpacity, Text, Platform, Button, Header } from 'react-native';
-import Time from './Time';
-import { createStackNavigator, createAppContainer } from 'react-navigation';
+import { StyleSheet, View, Text, Button } from 'react-native';
 
-export default class Alarm extends Component {
+class Alarm extends Component {
   static navigationOptions = ({ navigation }) => {
     return {
-      headerTitle: <Text>Alarm</Text>,
+      headerTitle: <Text></Text>,
       headerRight: (
         <Button
-          onPress={navigation.getParam('increaseCount')}
+          onPress={() => navigation.navigate('Add')}
           title="+"
           color='#251917'
         />
       ),
     };
   };
-
-  componentWillMount() {
-    this.props.navigation.setParams({ increaseCount: this._increaseCount });
-  }
-
-  state = {
-    count: 0,
-  };
-
-  _increaseCount = () => {
-    this.setState({ count: this.state.count + 1 });
-  };
-
+  
   render() {
     return (
       <View style={{ flex: 1, alignItems: 'center', justifyContent: 'center' }}>
         <Text>Alarm Screen</Text>
-        <Text>Count: {this.state.count}</Text>
       </View>
     );
   }
 }
 
-// export default LoginForm;
+export default Alarm;
 
 const styles = StyleSheet.create({
   container: {
