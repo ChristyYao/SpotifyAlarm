@@ -5,6 +5,7 @@ import Splash from './src/components/Splash/Splash';
 import Login from './src/components/Login/Login';
 import Alarm from './src/components/Alarm/Alarm';
 import Add from './src/components/Alarm/Add';
+import Spotify from './src/components/Alarm/Spotify';
 
 const AppNavigator = createStackNavigator(
   {
@@ -41,9 +42,16 @@ const AppNavigator = createStackNavigator(
         animationEnabled: true
       }
     },
+    Spotify: {
+      screen: Spotify,
+      navigationOptions:
+      {
+        header: null,
+      }
+    },
   },
     {
-      initialRouteName: "Login",
+      initialRouteName: "Spotify",
       navigationOptions: {
 
       }

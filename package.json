@@ -9,6 +9,7 @@
   "dependencies": {
     "expo": "^32.0.0",
     "react": "16.5.0",
+    "react-clock": "^2.3.0",
     "react-native": "https://github.com/expo/react-native/archive/sdk-32.0.0.tar.gz",
     "react-native-alarm": "^1.2.0",
     "react-native-alarm-clock": "^1.0.0",
@@ -16,9 +17,10 @@
     "react-native-easy-toast": "^1.2.0",
     "react-native-in-app-notification": "^3.0.0",
     "react-native-oauth": "^2.1.18",
+    "react-native-simple-time-picker": "^0.2.0",
     "react-native-toast-notification": "^1.1.2",
     "react-native-webview": "^5.6.2",
-    "react-navigation": "^3.6.1"
+    "react-time-picker": "^3.5.1"
   },
   "devDependencies": {
     "babel-preset-expo": "^5.0.0"
