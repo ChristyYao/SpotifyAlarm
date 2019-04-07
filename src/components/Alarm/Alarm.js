@@ -4,7 +4,7 @@ import { StyleSheet, View, Text, Button } from 'react-native';
 class Alarm extends Component {
   static navigationOptions = ({ navigation }) => {
     return {
-      headerTitle: <Text>Alarm</Text>,
+      headerTitle: <Text></Text>,
       headerRight: (
         <Button
           onPress={() => navigation.navigate('Add')}
