@@ -1,11 +1,12 @@
 import React from 'react';
-import { StyleSheet, Text, View, Image, Button, TextInput, Item } from 'react-native';
+import { StyleSheet, Text, View, Image, Button, TextInput, Item, ScrollView } from 'react-native';
 
 export default class App extends React.Component {
   constructor(props) {
     super(props);
     this.apiPrefix = 'https://api.spotify.com/v1';
-    this.secret = 'BQCvtE7D-nNzvLUIxmZSCZAHwNxygn4yBBJw_TzHquDFvtAvXXOUvkwRqaBOpmcrLHKxQqafKBAH15xCPP-UYAsuRTU4IMh-xsk-eaY0YLUQdsSOs3oIBfTfRumd8pdrEiosi0t85EzOfg68EM04Lzr7wg';
+    this.secret = 'BQBkWHLlewjUIuZAnI6cwOmyITIiXalOog3hegMXGtkFJkWRjCOABsR4L6yIybgqEsQFAfKLcWwI0IlnKyFDRKRwwLQNvxIRSD3J--pGsyrQRLLdmS2aYT5YGcVIUl7QTFUW1YfTX8JwztdfpLEHLBZXgho'
+        ;
     this.deviceID = 'N/A';
     this.deviceName = 'N/A';
     this.deviceType = 'N/A';
@@ -15,7 +16,7 @@ export default class App extends React.Component {
     this.songImage = 'N/A';
     this.songUri = 'N/A';
     this.tracks = 'N/A';
-    this.limit = 5;
+    this.limit = 20;
     this.state = { text: '' };
   }
 
@@ -74,15 +75,15 @@ export default class App extends React.Component {
       let uri = props.items[i].uri;
       let track = props.items[i].name;
       array.push(
+        <View style={styles.songContainer}>
+        </View>
+      );
+      array.push(
         <Image
           style={{width: 50, height: 50}}
           source={{uri: image}}
-        />
-      );
-      array.push(
-         <Text>{artist} - {track}</Text>
-      );
-      array.push(
+        />,
+        <Text>{artist} - {track}</Text>,
         <Button
           onPress={() => {
             this.pick_song(track, artist, image, uri);
@@ -90,6 +91,17 @@ export default class App extends React.Component {
           title="Pick me"
         />
       );
+      // array.push(
+      //    <Text>{artist} - {track}</Text>
+      // );
+      // array.push(
+      //   <Button
+      //     onPress={() => {
+      //       this.pick_song(track, artist, image, uri);
+      //     }}
+      //     title="Pick me"
+      //   />
+      // );
     }
     return array;
   }
@@ -184,7 +196,7 @@ export default class App extends React.Component {
        return (
          <View style={styles.container}>
            <TextInput
-             style={{height: 40, borderColor: 'gray', borderWidth: 1}}
+             style={styles.textin}
              onChangeText={(text) => this.setState({text})}
              value={this.state.text}
            />
@@ -200,27 +212,28 @@ export default class App extends React.Component {
      else {
        let array = this.render_tracks();
        return (
-         <View style={styles.container}>
-         <Text>Pick a song</Text>
-         {array}
+         <ScrollView style={styles.scrollContainer}>
+         <TextInput
+           style={styles.textin}
+           onChangeText={(text) => this.setState({text})}
+           value={this.state.text}
+           />
+           <Button
+             onPress={() => {
+               this.find_tracks(this.limit, 'track', 'DK', this.state.text);
+             }}
+             title="Find song"
+           />
+        {array}
          <Button
            onPress={() => {
              this.find_devices();
            }}
            title="Find devices"
          />
-         <TextInput
-           style={{height: 40, borderColor: 'gray', borderWidth: 1}}
-           onChangeText={(text) => this.setState({text})}
-           value={this.state.text}
-           />
-         <Button
-           onPress={() => {
-             this.find_tracks(this.limit, 'track', 'DK', this.state.text);
-           }}
-           title="Find song"
-         />
-         </View>
+
+
+         </ScrollView>
        );
      }
    }
@@ -229,7 +242,7 @@ export default class App extends React.Component {
        <View style={styles.container}>
          <Text>{this.deviceName} ({this.deviceType})</Text>
          <TextInput
-         style={{height: 40, borderColor: 'gray', borderWidth: 1}}
+         style={styles.textin}
          onChangeText={(text) => this.setState({text})}
          value={this.state.text}
          />
@@ -262,6 +275,18 @@ const styles = StyleSheet.create({
    backgroundColor: '#F1DFD7',
    alignItems: 'center',
    justifyContent: 'center',
+   marginTop:10,
+   paddingTop:25
+ },
+ scrollContainer: {
+   flex: 1,
+   backgroundColor: '#F1DFD7',
+   // paddingTop: 100,
+   // paddingVertical: 100
+ },
+ songContainer: {
+   flex: 1,
+   flexDirection: 'row'
  },
  title: {
    color: '#251917',
@@ -276,5 +301,17 @@ const styles = StyleSheet.create({
  titleWrapper: {
    justifyContent: 'center',
    flex: 1
+ },
+ textin: {
+   marginTop:100,
+   paddingTop:25,
+   paddingBottom:25,
+   paddingHorizontal: 25,
+   marginLeft:30,
+   marginRight:30,
+   marginBottom: 100,
+   borderRadius:20,
+   borderWidth: 1.5,
+   borderColor: '#251917'
  }
 });
