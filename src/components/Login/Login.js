@@ -1,5 +1,5 @@
 import React from 'react';
-import { StyleSheet, Text, View, Image, Button, TouchableOpacity, Dimensions, WebView } from 'react-native';
+import { StyleSheet, Text, View, Image, TouchableOpacity, Dimensions, WebView } from 'react-native';
 
 const screenWidth = Math.round(Dimensions.get('window').width);
 const screenHeight = Math.round(Dimensions.get('window').height);
@@ -31,12 +31,12 @@ class Login extends React.Component {
         </View>
         { this.state.showWebView && 
         <WebView
-          source={{uri: 'https://accounts.spotify.com/authorize?response_type=code&client_id=b68846ed8866426d9b9d7c591d758171&scope=user-read-private user-read-email&redirect_uri=http://example.com'}}
+          source={{uri: 'https://accounts.spotify.com/authorize?response_type=code&client_id=b68846ed8866426d9b9d7c591d758171&scope=user-read-private user-read-email&redirect_uri=http://blank.org'}}
           style={styles.web}
           onNavigationStateChange={(event) => {
-            if (event.url.match('http://example.com')) {
+            if (event.url.match('http://blank.org')) {
               this.showSpotifyWebView(false);
-              this.props.navigation.navigate('Add')
+              this.props.navigation.navigate('Alarm')
             }
           }}
         />
