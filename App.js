@@ -51,7 +51,7 @@ const AppNavigator = createStackNavigator(
     },
   },
     {
-      initialRouteName: "Spotify",
+      initialRouteName: "Add",
       navigationOptions: {
 
       }
