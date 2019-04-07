@@ -17,6 +17,7 @@
     "react-native-in-app-notification": "^3.0.0",
     "react-native-oauth": "^2.1.18",
     "react-native-toast-notification": "^1.1.2",
+    "react-native-webview": "^5.6.2",
     "react-navigation": "^3.6.1"
   },
   "devDependencies": {
